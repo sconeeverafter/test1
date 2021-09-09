@@ -1,0 +1,114 @@
+print("Hellow World")
+2/4
+a <- 2
+a
+a <-3
+a
+
+a <- c(3,5)
+a
+a <- c(1,2,3)
+
+#scalar, vector, arrya, list, dataframe 
+#스칼라 : 하나의 원소
+scalar <-1
+scalar
+scalar <- "bts"
+scalar
+
+#vector : 여러개의 원소들이나 하나의 row
+vector <-c(1,2,3)
+vector
+vector <-c("v", "rm","suga")
+vector
+
+#matrix : vector 를 여러개 row로 
+matrix <- matrix(c(1,2,3,4,5,6), nrow=3)
+matrix
+matrix <- matrix(c(1,2,3,4,5,6), nrow=2)
+matrix
+
+matrix <- matrix(c(1:20), nrow=4, ncol=5)
+matrix
+
+matrix <- matrix(c((1:20), nrow=4, ncol=5, byrow=TRUE))
+
+mat1 <- c(1:3)
+mat1
+mat2 <- c(4:6)
+mat2
+
+matrix <- c(mat1, mat2)
+matrix
+
+matrix <- cbind(mat1, mat2) #column 기준 횡으로 
+matrix
+matrix <- rbind(mat1, mat2) #row 기준으로 종으로 붙이기
+matrix
+
+matrix[1,2]
+matrix[1:2]
+matrix[1,]
+matrix[,1]
+matrix[c(1,2),] #1,2번째 row 모든 원소 
+matrix[1,2]=100
+matrix
+
+#array
+matrix1 <-matrix(c(1:9), nrow=3)
+matrix2<- matrix(c(10:18), nrow=3)
+matrix3 <- matrix(c(19:27), nrow=3)
+
+array <- array(c(matrix1, matrix2, matrix3), dim=c(3,3,3))
+array
+
+
+btsname <- c("RM","Jin","suga")
+btsyear <- c(1994, 1992, 1993)
+btsposition <- c("rap", "vocal","rap")
+bts <- data.frame(btsname, btsyear, btsposition)
+bts
+
+str(bts)
+
+bts <- data.frame(btsname, btsyear, btsposition, stringsAsFactors = TRUE)
+str(bts)
+
+gender=factor(c("male","female","female","male"))
+gender
+str(gender)
+
+#level의 순서를 바꾸고 싶거나, referecne 그룹 설정을 위해서는 leves=c()사용
+gender = factor(gender,
+                levels=c("male","female"))
+gender
+str(gender)
+
+str(bts)
+
+bts$btsname
+bts$btsposition = factor(btsposition, levels=c("vocal","rap"))
+bts$btsposition
+
+bts$age <- 2021-bts$btsyear+1
+bts
+bts$null <- NULL
+bts
+bts$na <- NA
+bts
+dim(bts)
+
+bts[1,5] <-3
+bts[2,5] <-5
+bts[3,5] <-NA
+bts
+mean(bts$age)
+mean(bts$na)
+
+mean(bts$na, na.rm=TRUE) #NA를 아예 X. 분모처리도 안함
+
+getwd()
+sewwd("D:\\test1")
+
+
+install.packa
